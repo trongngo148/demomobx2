@@ -1,4 +1,4 @@
-import { observable, action, computed, runInAction } from 'mobx'
+import { observable, action, computed} from 'mobx'
 import {createContext} from "react"
 
 class Store {
@@ -6,10 +6,8 @@ class Store {
     @observable users = ["Jonathan","Tommy"]; 
 
     @action updateComment = (comment) => {
-        runInAction ("run update", ()=> {
-            this.comments.push(comment);
-            console.log(this.comments);
-        })
+        this.comments.push(comment);
+        console.log(this.comments);
 
     }
     @computed get commentCount(){
