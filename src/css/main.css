@@ -1,3 +1,21 @@
-body{
-    background-color: bisque;
+body {
+  background-color: gray;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+table {
+  background-color: beige;
+  box-shadow: 5px 10px #dfdede;
+}
+.comment-count {
+  text-align: right;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
 }
