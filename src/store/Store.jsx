@@ -1,18 +1,20 @@
-import { observable, action, computed } from 'mobx'
+import { observable, action, computed, runInAction } from 'mobx'
+import {createContext} from "react"
 
 class Store {
-    @observable comments = ["trong","ngo"]
-    @observable users = ["Jonathan","Tommy"]
-    @action updateComment(comment){
-        console.log("AAA");
-        this.comments.push(comment);
-        console.log(this.comments);
+    @observable comments = ["trong","ngo"];
+    @observable users = ["Jonathan","Tommy"]; 
+
+    @action updateComment = (comment) => {
+        runInAction ("run update", ()=> {
+            this.comments.push(comment);
+            console.log(this.comments);
+        })
+
     }
     @computed get commentCount(){
         return this.comments.length;
     }
 }
 
-const storeInstance = new Store()
-
-export default storeInstance;
+export default createContext(new Store());

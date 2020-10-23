@@ -1,24 +1,29 @@
-import React from "react";
-import { StoreContext } from "../main";
-import {useObserver} from "mobx-react";
+import React , {useEffect, useState} from "react";
 import Image from './Image'
+import StoreService from "../store/Store"
 import InputComment from "./InputComment";
+import { observer } from "mobx-react-lite"
 
 const Comment = () => {
-  const store = React.useContext(StoreContext);
+  useEffect(()=> {
+      console.log(commentCount);
+      console.log("it run in comments");
+  })
+  const store = React.useContext(StoreService);
   let tempUsers = []
-  store.users.map((users) => {
+  const {comments, users, commentCount} = store
+  
+  users.map((users) => {
       tempUsers.push(users)
   })
-  console.log(tempUsers);
-   return useObserver(
-     () =>
-     (<table className="table-comment">
+  return(
+    <React.Fragment>
+      <table className="table-comment">
        <tbody>
           <tr><td><Image /></td></tr>
-          <tr><td className="comment-count">{store.commentCount} comments</td></tr>
+          <tr><td className="comment-count">{commentCount} comments</td></tr>
          {
-           store.comments.map((comment,index) =>{
+          comments.map((comment,index) =>{
              return (
                <tr key={index} className="tr">
                   <td>{tempUsers[index]}:&nbsp;&nbsp;&nbsp;{comment}</td>
@@ -26,9 +31,11 @@ const Comment = () => {
            })
          }
          <tr><td><InputComment /></td></tr>
+         {/* <tr><td><Form/></td></tr> */}
        </tbody>
-     </table>)
-   )
+     </table>
+     </React.Fragment>
+     )
 }
 
-export default Comment
+export default observer(Comment)

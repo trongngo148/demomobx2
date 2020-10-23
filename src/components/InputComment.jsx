@@ -1,18 +1,16 @@
 import React from "react";
-import { StoreContext } from "../main";
+import StoreService from "../store/Store";
 
 
 const InputComment = () => {
-    const store = React.useContext(StoreContext);
+    const store = React.useContext(StoreService);
+    const {updateComment} = store;
     const [comment, setComment] = React.useState("");
     const handleInput = (e) =>{
         e.preventDefault();
-        store.updateComment(comment);
+        comment.length === 0 ? alert("Sorry ! Please Typing something"): updateComment(comment);
         setComment("");
-        console.log("hii");
     }
-
-    
     return(
         <form onSubmit={handleInput}>
             &nbsp;<input type="text" value={comment} onChange={(e) =>{
