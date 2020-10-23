@@ -18,7 +18,7 @@ const Comment = () => {
         comments.map((comment,index) =>{
            return (
              <tr key={index} className="tr">
-                <td>{tempUsers[index]}:&nbsp;&nbsp;&nbsp;{comment}</td>
+                <tbody>{tempUsers[index]}:&nbsp;&nbsp;&nbsp;{comment}</tbody>
              </tr>)
          })
    )
