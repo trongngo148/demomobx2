@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 export const SignUp = () =>{
     return <> 
         <table className="form-login">
@@ -7,6 +8,6 @@ export const SignUp = () =>{
             <tr><td className="form-login"><input className="login" placeholder="password" /></td></tr>
             <tr><td className="form-login"><input className="login" placeholder="re-password" /></td></tr>
         </table>
-        <button className="button-login">Sign In</button><button className="button-login">Sign Up</button>
+        <Link to="/signup" ><button className="button-login">Sign In</button></Link><Link to="/login"><button className="button-login">Sign Up</button></Link>
     </>
 }
