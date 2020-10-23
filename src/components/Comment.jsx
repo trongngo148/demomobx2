@@ -1,7 +1,5 @@
-import React , {useEffect, useState} from "react";
-import Image from './Image'
+import React , {useEffect} from "react";
 import StoreService from "../store/Store"
-import InputComment from "./InputComment";
 import { observer } from "mobx-react-lite"
 
 const Comment = () => {
@@ -17,25 +15,13 @@ const Comment = () => {
       tempUsers.push(users)
   })
   return(
-    <React.Fragment>
-      <table className="table-comment">
-       <tbody>
-          <tr><td><Image /></td></tr>
-          <tr><td className="comment-count">{commentCount} comments</td></tr>
-         {
-          comments.map((comment,index) =>{
-             return (
-               <tr key={index} className="tr">
-                  <td>{tempUsers[index]}:&nbsp;&nbsp;&nbsp;{comment}</td>
-               </tr>)
-           })
-         }
-         <tr><td><InputComment /></td></tr>
-         {/* <tr><td><Form/></td></tr> */}
-       </tbody>
-     </table>
-     </React.Fragment>
-     )
+        comments.map((comment,index) =>{
+           return (
+             <tr key={index} className="tr">
+                <td>{tempUsers[index]}:&nbsp;&nbsp;&nbsp;{comment}</td>
+             </tr>)
+         })
+   )
 }
 
 export default observer(Comment)
