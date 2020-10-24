@@ -97,8 +97,22 @@ export const Users =[{
     password: "123",
     post:[
         {
-
-        }
+            img:"https://static.boredpanda.com/blog/wp-content/uploads/2018/10/cutest-puppy-dog-pictures-coverimage.jpg",
+            alt:"dog1",
+            countLike:0,
+            comment:{
+                commentUser:["Jon","TrongNgo"],
+                commentContent:["Aww So Cute !","A Beautiful Dog !"],
+            },
+        },{
+            img:"https://i.pinimg.com/564x/63/5f/55/635f5504c4c622387f51cad47207ec28.jpg",
+            alt:"dog1",
+            countLike:0,
+            comment:{
+                commentUser:["Jon","TrongNgo"],
+                commentContent:["Aww So Cute !","A Beautiful Dog !"],
+            },
+        },
     ]
 }]
 

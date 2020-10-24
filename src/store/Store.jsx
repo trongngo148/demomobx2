@@ -7,6 +7,7 @@ class Store {
     @observable userComments = ["Jonathan","Tommy"]; 
     @observable userss = Users;
     @observable indexUsersCurrent = null;
+    @observable isCheckUserExist = false;
 
     @action signUp = (username,password) =>{
         this.userss.push({
@@ -25,6 +26,33 @@ class Store {
         console.log(this.isCheckLogin)
     }
 
+    @action checkUserName = (username) =>{
+        for (let user of this.userss){
+            if(user.username === username){
+                 this.isCheckUserExist= true;}
+        }
+        console.log(this.isCheckLogin)
+    }
+    @action addUser = (username,password) =>{
+        this.indexUsersCurrent = this.userss.length;
+        this.isCheckLogin = true;
+        this.userss.push({
+            username: username,
+            password: password,
+            post:[
+                {
+                    img:"https://static.boredpanda.com/blog/wp-content/uploads/2018/10/cutest-puppy-dog-pictures-coverimage.jpg",
+                    alt:"dog1",
+                    countLike:0,
+                    comment:{
+                        commentUser:["Jon","TrongNgo"],
+                        commentContent:["Aww So Cute !","A Beautiful Dog !"],
+                    },
+                }
+            ]
+        });
+    }
+
     @action updateComment = (comment,user,index) => {
         this.userss[this.indexUsersCurrent].post[index].comment.commentUser.push(user);
         this.userss[this.indexUsersCurrent].post[index].comment.commentContent.push(comment);
@@ -35,6 +63,9 @@ class Store {
     }
     @computed get isUser (){
         return this.isCheckLogin;
+    }
+    @computed get isUserExist (){
+        return this.isCheckUserExist;
     }
     @computed get commentCount(){
         return this.comments.length;
