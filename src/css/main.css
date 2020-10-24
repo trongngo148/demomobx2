@@ -4,7 +4,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 50px;
+  margin-top: 10%;
 }
 table {
   background-color: beige;
@@ -23,7 +23,27 @@ th,
 td {
   border: 1px solid black;
 }
+.comment {
+  margin-left: 20px;
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+.form-inputcmt {
+  width: 200px;
+  border: none;
+  border-bottom: 1px solid rgb(216, 216, 216);
+}
 
+.welcome-text {
+  color: white;
+  font-size: 50px;
+}
+
+.btn-inputcmt {
+  background-color: antiquewhite;
+  border: none;
+  border-bottom: 1px solid rgb(107, 107, 107);
+}
 .form-login {
   border: 1px ridge gray;
 }

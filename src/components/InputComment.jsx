@@ -8,15 +8,15 @@ const InputComment = () => {
     const [comment, setComment] = React.useState("");
     const handleInput = (e) =>{
         e.preventDefault();
-        comment.length === 0 ? alert("Sorry ! Please Typing something"): updateComment(comment);
+        comment.length === 0 ? alert("Sorry ! Please Typing something"): updateComment(comment,store.userName);
         setComment("");
     }
     return(
-        <form onSubmit={handleInput}>
+        <form onSubmit={handleInput} className="">
             &nbsp;<input type="text" value={comment} onChange={(e) =>{
                 setComment(e.target.value)
-            }}/> &nbsp;
-            <button type="submit">Comment</button>
+            }} className="form-inputcmt" placeholder="Enter something.."/> &nbsp;
+            <button type="submit" className="btn-inputcmt">Comment</button>
         </form>
     );
 }

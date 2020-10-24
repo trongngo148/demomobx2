@@ -9,16 +9,16 @@ const Comment = () => {
   })
   const store = React.useContext(StoreService);
   let tempUsers = []
-  const {comments, users, commentCount} = store
+  const {comments, userComments, commentCount} = store
   
-  users.map((users) => {
+  userComments.map((users) => {
       tempUsers.push(users)
   })
   return(
         comments.map((comment,index) =>{
            return (
              <tr key={index} className="tr">
-                <tbody>{tempUsers[index]}:&nbsp;&nbsp;&nbsp;{comment}</tbody>
+                <tbody><p className="comment">{tempUsers[index]}:&nbsp;&nbsp;&nbsp;{comment}</p></tbody>
              </tr>)
          })
    )

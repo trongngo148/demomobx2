@@ -2,14 +2,11 @@ import { observable, action, computed} from 'mobx'
 import {createContext} from "react"
 import {Users} from "../model/Users"
 class Store {
-    @observable isCheck = false;
+    @observable isCheckLogin = false;
     @observable comments = ["trong","ngo"];
-    @observable users = ["Jonathan","Tommy"]; 
+    @observable userComments = ["Jonathan","Tommy"]; 
     @observable userss = Users;
-
-    @computed get isUser (){
-        return this.isCheck;
-    }
+    @observable indexUsersCurrent = null;
 
     @action signUp = (username,password) =>{
         this.userss.push({
@@ -21,18 +18,27 @@ class Store {
     @action checkLogin = (username, password) =>{
         console.log("login "+ username + password)
         for (let user of this.userss){
-            if(user.username === username && user.password === password) this.isCheck = true;
+            if(user.username === username && user.password === password){
+                 this.indexUsersCurrent = this.userss.indexOf(user);
+                 this.isCheckLogin = true;}
         }
-        console.log(this.isCheck)
+        console.log(this.isCheckLogin)
     }
 
-    @action updateComment = (comment) => {
+    @action updateComment = (comment,user) => {
         this.comments.push(comment);
+        this.userComments.push(user);
         console.log(this.comments);
 
     }
+    @computed get isUser (){
+        return this.isCheckLogin;
+    }
     @computed get commentCount(){
         return this.comments.length;
+    }
+    @computed get userName(){
+        return this.userss[this.indexUsersCurrent].username;
     }
 }
 
