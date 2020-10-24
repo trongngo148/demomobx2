@@ -1,18 +1,21 @@
 import { observable, action, computed} from 'mobx'
 import {createContext} from "react"
-
+import {Users} from "../model/Users"
 class Store {
     @observable isCheck = false;
     @observable comments = ["trong","ngo"];
     @observable users = ["Jonathan","Tommy"]; 
-    @observable userss =[{
-        username: "trongngo",
-        password: "123"
-    }]
+    @observable userss = Users;
 
     @computed get isUser (){
-        console.log("vao day")
         return this.isCheck;
+    }
+
+    @action signUp = (username,password) =>{
+        this.userss.push({
+            username: username,
+            password: password
+        })
     }
 
     @action checkLogin = (username, password) =>{

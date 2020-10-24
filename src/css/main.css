@@ -31,3 +31,7 @@ td {
 .login {
   margin: 10px;
 }
+
+.error-text {
+  color: rgb(241, 35, 35);
+}
