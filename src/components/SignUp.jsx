@@ -8,6 +8,7 @@ export const SignUp = () =>{
             <tr><td className="form-login"><input className="login" placeholder="password" /></td></tr>
             <tr><td className="form-login"><input className="login" placeholder="re-password" /></td></tr>
         </table>
-        <Link to="/signup" ><button className="button-login">Sign In</button></Link><Link to="/login"><button className="button-login">Sign Up</button></Link>
+        <Link to="/login" ><button className="button-login">Sign In</button></Link>
+        <Link to="/signup"><button className="button-login">Sign Up</button></Link>
     </>
 }
