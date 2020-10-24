@@ -1,6 +1,6 @@
-import { PropTypes } from "mobx-react";
+
 import React from "react";
-import StoreService from "../store/Store";
+import StoreService from "../../../store/Store";
 
 
 const InputComment = (props) => {
@@ -19,7 +19,7 @@ const InputComment = (props) => {
         <form  onSubmit={handleInput} className="" >
             &nbsp;<input type="text" value={comment} onChange={(e) =>{
                 setComment(e.target.value)
-            }} className="form-inputcmt" placeholder="Enter something.."/> &nbsp;
+            }} className="form-inputcmt" placeholder="Comment something.."/> &nbsp;
             <button type="submit" className="btn-inputcmt">Comment</button>
         </form>
     );

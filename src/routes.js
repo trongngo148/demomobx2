@@ -1,7 +1,7 @@
 import React from 'react';
-import Home from "./components/Home";
-import {Login} from "./components/Login"
-import {SignUp} from "./components/SignUp"
+import Home from "./pages/homepage/Home";
+import {Login} from "./pages/authorizationpages/Login"
+import {SignUp} from "./pages/authorizationpages/SignUp"
 
 export const routes = [
     {

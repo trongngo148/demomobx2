@@ -9,6 +9,10 @@ body {
 table {
   background-color: beige;
   box-shadow: 5px 10px #dfdede;
+  padding: 6px;
+}
+.title-home {
+  color: white;
 }
 .comment-count {
   text-align: right;
@@ -18,11 +22,6 @@ table {
   margin-right: 5px;
 }
 
-table,
-th,
-td {
-  border: 1px solid black;
-}
 .comment {
   margin-left: 20px;
   margin-top: 1px;

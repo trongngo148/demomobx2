@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link ,useHistory } from "react-router-dom";
-import StoreService from '../store/Store'
+import StoreService from '../../store/Store'
 
 export const Login = () =>{
     const store = React.useContext(StoreService)
