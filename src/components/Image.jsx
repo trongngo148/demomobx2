@@ -1,11 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-const Image = () => {
+const Image = (props) => {
     return (
-    <tr>
-        <td><img src="https://static.boredpanda.com/blog/wp-content/uploads/2018/10/cutest-puppy-dog-pictures-coverimage.jpg" height="250px" alt="pupies"/></td>
-      </tr>);
+  <div className="img-post"><img height="400px" width="350px"  src={props.src}  alt={props.alt}/></div>
+      );
 }
 
 export default Image;

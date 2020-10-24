@@ -25,10 +25,12 @@ class Store {
         console.log(this.isCheckLogin)
     }
 
-    @action updateComment = (comment,user) => {
-        this.comments.push(comment);
-        this.userComments.push(user);
-        console.log(this.comments);
+    @action updateComment = (comment,user,index) => {
+        this.userss[this.indexUsersCurrent].post[index].comment.commentUser.push(user);
+        this.userss[this.indexUsersCurrent].post[index].comment.commentContent.push(comment);
+        console.log('====================================');
+        console.log(this.userss[this.indexUsersCurrent].post[index].comment.commentContent);
+        console.log('====================================');
 
     }
     @computed get isUser (){
