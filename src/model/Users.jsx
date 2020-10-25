@@ -11,7 +11,7 @@ export const Users =[{
                 commentContent:["Aww So Cute !","A Beautiful Dog !"],
             },
         },{
-            img:"https://i.pinimg.com/564x/63/5f/55/635f5504c4c622387f51cad47207ec28.jpg",
+            img:"https://petto.vn/wp-content/uploads/2019/07/3150_sao-han-sinh-nam-1997-10.jpg",
             alt:"dog1",
             countLike:0,
             comment:{

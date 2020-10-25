@@ -12,9 +12,9 @@ class ImgStore {
       runInAction(() => {
           this.isGetImage = true;
           this.imageUrl = data.message;
-          console.log('====================================');
+          console.log('================AAAAA==================');
           console.log(this.imageUrl);
-          console.log('====================================');
+          console.log('================AAAAA==============');
       });
   }
   @computed get getImage(){

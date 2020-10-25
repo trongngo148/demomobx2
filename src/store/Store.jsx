@@ -54,9 +54,7 @@ class Store {
     }
 
     @action addPost = (imgUrl) =>{
-        console.log('====================================');
-        console.log(imgUrl);
-        console.log('====================================');
+       
         this.userss[this.indexUsersCurrent].post.push({
             img:`${imgUrl}`,
             alt:"dog",
@@ -65,6 +63,9 @@ class Store {
                 commentUser:[],
                 commentContent:[],
             }});
+         console.log('============BBBBB==================');
+         console.log(imgUrl);
+         console.log('============BBBBB==================');
     }
 
     @action updateComment = (comment,user,index) => {

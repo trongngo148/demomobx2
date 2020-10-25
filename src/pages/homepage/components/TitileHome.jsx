@@ -7,8 +7,8 @@ const TitleHome = () => {
     const imgStore = React.useContext(StoreImgService);
     
     const  handleOnClick = () => {
-        imgStore.fetchImage();
         store.addPost(imgStore.getImage);
+        imgStore.fetchImage();
     }
     return(
     <>
