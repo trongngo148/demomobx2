@@ -5,12 +5,12 @@ class Store {
     @observable isCheckLogin = false;
     @observable comments = ["trong","ngo"];
     @observable userComments = ["Jonathan","Tommy"]; 
-    @observable userss = Users;
+    @observable users = Users;
     @observable indexUsersCurrent = null;
     @observable isCheckUserExist = false;
 
     @action signUp = (username,password) =>{
-        this.userss.push({
+        this.users.push({
             username: username,
             password: password
         })
@@ -18,25 +18,26 @@ class Store {
 
     @action checkLogin = (username, password) =>{
         console.log("login "+ username + password)
-        for (let user of this.userss){
+        for (let user of this.users){
             if(user.username === username && user.password === password){
-                 this.indexUsersCurrent = this.userss.indexOf(user);
+                 this.indexUsersCurrent = this.users.indexOf(user);
                  this.isCheckLogin = true;}
         }
         console.log(this.isCheckLogin)
     }
 
     @action checkUserName = (username) =>{
-        for (let user of this.userss){
+        this.isCheckUserExist = false;
+        for (let user of this.users){
             if(user.username === username){
                  this.isCheckUserExist= true;}
         }
         console.log(this.isCheckLogin)
     }
     @action addUser = (username,password) =>{
-        this.indexUsersCurrent = this.userss.length;
+        this.indexUsersCurrent = this.users.length;
         this.isCheckLogin = true;
-        this.userss.push({
+        this.users.push({
             username: username,
             password: password,
             post:[
@@ -45,8 +46,8 @@ class Store {
                     alt:"dog1",
                     countLike:0,
                     comment:{
-                        commentUser:["Jon","TrongNgo"],
-                        commentContent:["Aww So Cute !","A Beautiful Dog !"],
+                        commentUser:[],
+                        commentContent:[],
                     },
                 }
             ]
@@ -54,8 +55,8 @@ class Store {
     }
 
     @action addPost = (imgUrl) =>{
-       
-        this.userss[this.indexUsersCurrent].post.push({
+        this.users[this.indexUsersCurrent].post.push({
+            id: this.users[this.indexUsersCurrent].post.length,
             img:`${imgUrl}`,
             alt:"dog",
             countLike:0,
@@ -69,19 +70,17 @@ class Store {
     }
 
     @action updateComment = (comment,user,index) => {
-        let convertIndex = this.userss[this.indexUsersCurrent].post.length-1 - index;
-        this.userss[this.indexUsersCurrent].post[convertIndex].comment.commentUser.push(user);
-        this.userss[this.indexUsersCurrent].post[convertIndex].comment.commentContent.push(comment);
+        this.users[this.indexUsersCurrent].post[index].comment.commentUser.push(user);
+        this.users[this.indexUsersCurrent].post[index].comment.commentContent.push(comment);
         console.log('====================================');
-        console.log(this.userss[this.indexUsersCurrent].post[convertIndex].comment.commentContent);
+        console.log(this.users[this.indexUsersCurrent].post[index].comment.commentContent);
         console.log('====================================');
 
     }
     @action updateCountLike= (index) => {
-        let convertIndex = this.userss[this.indexUsersCurrent].post.length-1 - index;
-        this.userss[this.indexUsersCurrent].post[convertIndex].countLike++;
+        this.users[this.indexUsersCurrent].post[index].countLike++;
         console.log('====================================');
-        console.log(this.userss[this.indexUsersCurrent].post[convertIndex].countLike);
+        console.log(this.users[this.indexUsersCurrent].post[index].countLike);
         console.log('====================================');
 
     }
@@ -96,10 +95,10 @@ class Store {
         return this.comments.length;
     }
     @computed get userName(){
-        return this.userss[this.indexUsersCurrent].username;
+        return this.users[this.indexUsersCurrent].username;
     }
     @computed get getUser(){
-        return this.userss[this.indexUsersCurrent];
+        return this.users[this.indexUsersCurrent];
     }
 }
 

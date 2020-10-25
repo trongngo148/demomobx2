@@ -1,11 +1,9 @@
 import React from 'react';
 import StoreService from '../../../store/Store'
 import StoreImgService from '../../../store/ImgStore'
-import { observer } from "mobx-react-lite"
 const TitleHome = () => {
     const store = React.useContext(StoreService);
     const imgStore = React.useContext(StoreImgService);
-    
     const  handleOnClick = () => {
         store.addPost(imgStore.getImage);
         imgStore.fetchImage();
@@ -18,4 +16,4 @@ const TitleHome = () => {
         
     );
 }
-export default observer(TitleHome)
+export default TitleHome

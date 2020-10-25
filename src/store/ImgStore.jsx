@@ -3,10 +3,9 @@ import {createContext} from "react"
 class ImgStore {
   id = 1;
   @observable isGetImage = false;
-  @observable imageUrl ="https://afamilycdn.com/150157425591193600/2020/9/24/13e011a64b3d19746510c8fd7b9711b7-1600919177017867010083.jpg";
+  @observable imageUrl ="https://www.hindisoch.com/wp-content/uploads/2019/11/Cutest-Puppies-Dog-Picture-Stylish-Lovely-Dog.jpg";
   @observable data = null;
   @action async fetchImage(){
-      const characterId = ++this.id;
     const response = await fetch(`https://dog.ceo/api/breeds/image/random`);
       const data = await response.json();
       runInAction(() => {
