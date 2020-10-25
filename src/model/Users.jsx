@@ -31,31 +31,31 @@ export const Users =[{
             alt:"dog1",
             countLike:0,
             comment:{
-                commentUser:["Jon","TrongNgo"],
-                commentContent:["Aww So Cute !","A Beautiful Dog !"],
+                commentUser:["Tommy","Jackson"],
+                commentContent:["Cute !","A Beautiful Dog !"],
             },
         }, {
             img:"https://3.bp.blogspot.com/-ECcYy3v7pIw/XN0gUYCONYI/AAAAAAAAA24/C22MH31sMqwOn8WAxnyHeoAN1HeRm1A7gCLcBGAs/s1600/2942_sao-han-sinh-nam-1997-10.jpg",
             alt:"dog1",
             countLike:8,
             comment:{
-                commentUser:["Jon","TrongNgo"],
-                commentContent:["Aww So Cute !","A Beautiful Dog !"],
+                commentUser:["Jon"],
+                commentContent:["A Beautiful Dog !"],
             },
         }, {
             img:"https://i.pinimg.com/564x/63/5f/55/635f5504c4c622387f51cad47207ec28.jpg",
             alt:"dog1",
             countLike:7,
             comment:{
-                commentUser:["Jon","TrongNgo"],
-                commentContent:["Aww So Cute !","A Beautiful Dog !"],
+                commentUser:["Jon","Smith"],
+                commentContent:["he's so lovely !","A beautiful pic "],
             },
         }, {
             img:"https://static.boredpanda.com/blog/wp-content/uploads/2018/10/cutest-puppy-dog-pictures-coverimage.jpg",
             alt:"dog1",
             countLike:3,
             comment:{
-                commentUser:["Jon","TrongNgo"],
+                commentUser:["Tommy","TrongNgo"],
                 commentContent:["Aww So Cute !","A Beautiful Dog !"],
             },
         }
@@ -70,7 +70,7 @@ export const Users =[{
             countLike:0,
             comment:{
                 commentUser:["Jon","TrongNgo"],
-                commentContent:["Aww So Cute !","A Beautiful Dog !"],
+                commentContent:["he's so lovely !","A beautiful pic !"],
             },
         },{
             img:"https://i.pinimg.com/564x/63/5f/55/635f5504c4c622387f51cad47207ec28.jpg",
