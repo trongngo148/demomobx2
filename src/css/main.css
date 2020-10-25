@@ -15,7 +15,10 @@ table {
   color: white;
 }
 .comment-count {
-  text-align: right;
+}
+.img-comment-count {
+  margin-left: 10px;
+  margin-right: 220px;
 }
 .button-login {
   margin-top: 20px;

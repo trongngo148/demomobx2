@@ -77,6 +77,15 @@ class Store {
         console.log('====================================');
 
     }
+    @action updateCountLike= (index) => {
+        let convertIndex = this.userss[this.indexUsersCurrent].post.length-1 - index;
+        this.userss[this.indexUsersCurrent].post[convertIndex].countLike++;
+        console.log('====================================');
+        console.log(this.userss[this.indexUsersCurrent].post[convertIndex].countLike);
+        console.log('====================================');
+
+    }
+
     @computed get isUser (){
         return this.isCheckLogin;
     }
@@ -88,6 +97,9 @@ class Store {
     }
     @computed get userName(){
         return this.userss[this.indexUsersCurrent].username;
+    }
+    @computed get getUser(){
+        return this.userss[this.indexUsersCurrent];
     }
 }
 
