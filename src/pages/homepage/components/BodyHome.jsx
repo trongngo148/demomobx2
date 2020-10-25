@@ -9,7 +9,7 @@ const BodyHome = () => {
     const  store = useContext(StoreService)
     
     return (
-        store.userss[store.indexUsersCurrent].post.map((post,index) =>{
+        store.userss[store.indexUsersCurrent].post.slice(0).reverse().map((post,index) =>{
             let tempListUser = []
             post.comment.commentUser.map((commentUser) =>{
                 tempListUser.push(commentUser);

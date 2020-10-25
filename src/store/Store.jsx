@@ -53,11 +53,26 @@ class Store {
         });
     }
 
-    @action updateComment = (comment,user,index) => {
-        this.userss[this.indexUsersCurrent].post[index].comment.commentUser.push(user);
-        this.userss[this.indexUsersCurrent].post[index].comment.commentContent.push(comment);
+    @action addPost = (imgUrl) =>{
         console.log('====================================');
-        console.log(this.userss[this.indexUsersCurrent].post[index].comment.commentContent);
+        console.log(imgUrl);
+        console.log('====================================');
+        this.userss[this.indexUsersCurrent].post.push({
+            img:`${imgUrl}`,
+            alt:"dog",
+            countLike:0,
+            comment:{
+                commentUser:[],
+                commentContent:[],
+            }});
+    }
+
+    @action updateComment = (comment,user,index) => {
+        let convertIndex = this.userss[this.indexUsersCurrent].post.length-1 - index;
+        this.userss[this.indexUsersCurrent].post[convertIndex].comment.commentUser.push(user);
+        this.userss[this.indexUsersCurrent].post[convertIndex].comment.commentContent.push(comment);
+        console.log('====================================');
+        console.log(this.userss[this.indexUsersCurrent].post[convertIndex].comment.commentContent);
         console.log('====================================');
 
     }
