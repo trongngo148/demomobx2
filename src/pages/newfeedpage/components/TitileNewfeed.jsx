@@ -2,7 +2,7 @@ import React from 'react';
 import StoreService from '../../../store/Store'
 import StoreImgService from '../../../store/ImgStore'
 import {useHistory} from 'react-router-dom'
-const TitleHome = () => {
+const TitileNewfeed = () => {
     const store = React.useContext(StoreService);
     const imgStore = React.useContext(StoreImgService);
     const history = useHistory();
@@ -12,17 +12,17 @@ const TitleHome = () => {
     }
     const handleGoToProfile = () => {
         history.push({
-            pathname: "/",
+            pathname: "/profile",
         })
     }
     return(
     <>
-        <h1 className="title-home">Welcome to Profile</h1>
+        <h1 className="title-home">Welcome to News Feed</h1>
         <h1 className="title-home">{store.userName}, </h1>
         <input type="button" value="Create A New Picture" onClick={handleOnClick}/>
-        <input type="button" value="Go to home" onClick={handleGoToProfile}/>
+        <input type="button" value="Go to profile" onClick={handleGoToProfile}/>
     </>
         
     );
 }
-export default TitleHome
+export default TitileNewfeed

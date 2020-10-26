@@ -4,7 +4,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 10%;
+  margin-top: 5%;
 }
 table {
   background-color: beige;
@@ -24,7 +24,9 @@ table {
   margin-top: 20px;
   margin-right: 5px;
 }
-
+.username-newfeed {
+  font-weight: bold;
+}
 .comment {
   margin-left: 20px;
   margin-top: 1px;

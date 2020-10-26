@@ -8,6 +8,7 @@ class Store {
     @observable users = Users;
     @observable indexUsersCurrent = null;
     @observable isCheckUserExist = false;
+    @observable alluser = Users; 
 
     @action signUp = (username,password) =>{
         this.users.push({
@@ -67,6 +68,20 @@ class Store {
          console.log('============BBBBB==================');
          console.log(imgUrl);
          console.log('============BBBBB==================');
+
+        
+    }
+
+    @action addPost2 = (imgUrl) => {
+        this.addPost(imgUrl);
+    }
+    @action updateCommentNewFeed = (comment,user,index,userId) => {
+        this.users[userId].post[index].comment.commentUser.push(user);
+        this.users[userId].post[index].comment.commentContent.push(comment);
+        console.log('====================================');
+        console.log(this.users[userId].post[index].comment.commentContent);
+        console.log('====================================');
+
     }
 
     @action updateComment = (comment,user,index) => {
@@ -74,6 +89,13 @@ class Store {
         this.users[this.indexUsersCurrent].post[index].comment.commentContent.push(comment);
         console.log('====================================');
         console.log(this.users[this.indexUsersCurrent].post[index].comment.commentContent);
+        console.log('====================================');
+
+    }
+    @action updateCountLikeNF= (index, userId) => {
+        this.users[userId].post[index].countLike++;
+        console.log('====================================');
+        console.log(this.users[userId].post[index].countLike);
         console.log('====================================');
 
     }
@@ -85,6 +107,7 @@ class Store {
 
     }
 
+    
     @computed get isUser (){
         return this.isCheckLogin;
     }
@@ -99,6 +122,10 @@ class Store {
     }
     @computed get getUser(){
         return this.users[this.indexUsersCurrent];
+    }
+    @computed get getAllUser(){
+        //return this.alluser;
+        return this.users;
     }
 }
 

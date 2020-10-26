@@ -3,7 +3,6 @@ import Comment from './Comment';
 import Image from './Image';
 import InputComment from './InputComment';
 import StoreService from "../../../store/Store";
-import {Redirect } from 'react-router-dom'
 import { observer } from "mobx-react-lite"
 const BodyHome = () => {
     const  store = useContext(StoreService)

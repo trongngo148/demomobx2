@@ -2,12 +2,12 @@ import React from 'react';
 import Home from "./pages/homepage/Home";
 import {Login} from "./pages/authorizationpages/Login"
 import {SignUp} from "./pages/authorizationpages/SignUp"
-
+import NewFeed from "./pages/newfeedpage/NewFeed";
 export const routes = [
     {
         path: '/',
         exact: true,
-        main: () => <Home />
+        main: () => <NewFeed />
     },
     {
         path: '/login',
@@ -18,5 +18,10 @@ export const routes = [
         path: '/signup',
         exact: false,
         main: () => <SignUp />
+    },
+    {
+        path: '/profile',
+        exact: false,
+        main: () => <Home />
     }
 ]
