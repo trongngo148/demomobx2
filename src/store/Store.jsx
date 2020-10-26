@@ -8,7 +8,7 @@ class Store {
     @observable users = Users;
     @observable indexUsersCurrent = null;
     @observable isCheckUserExist = false;
-    @observable alluser = Users; 
+    //@observable alluser = Users; 
 
     @action signUp = (username,password) =>{
         this.users.push({

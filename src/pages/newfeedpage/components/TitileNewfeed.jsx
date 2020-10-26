@@ -19,8 +19,8 @@ const TitileNewfeed = () => {
     <>
         <h1 className="title-home">Welcome to News Feed</h1>
         <h1 className="title-home">{store.userName}, </h1>
-        <input type="button" value="Create A New Picture" onClick={handleOnClick}/>
-        <input type="button" value="Go to profile" onClick={handleGoToProfile}/>
+        <input className="btn-title"  type="button" value="Create A New Picture" onClick={handleOnClick}/>
+        <input className="btn-title"  type="button" value="Go to profile" onClick={handleGoToProfile}/>
     </>
         
     );

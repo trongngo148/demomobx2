@@ -14,11 +14,12 @@ table {
 .title-home {
   color: beige;
 }
-.comment-count {
-}
 .img-comment-count {
   margin-left: 10px;
   margin-right: 200px;
+}
+.btn-title {
+  margin-bottom: 5px;
 }
 .button-login {
   margin-top: 20px;
